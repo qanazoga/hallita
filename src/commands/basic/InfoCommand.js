@@ -32,7 +32,7 @@ function generateEmbed(client) {
 		"fields": [
 		  {
 			"name": "Support Server:",
-			"value": `[${client.guilds.get(client.options.supportId)}](${client.options.supportInvite})`
+			"value": `[${client.guilds.get(client.options.supportServer).name}](${client.options.supportInvite})`
 		  },
 		  {
 			"name": "Repo:",
