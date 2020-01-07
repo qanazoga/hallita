@@ -15,7 +15,7 @@ module.exports = class InfoCommand extends Commando.Command {
 	}
 
 	async run(msg) {
-		await msg.replyEmbed(generateEmbed(msg.client));
+		await msg.say("", {embed: generateEmbed(msg.client)});
 	}
 }
 
@@ -58,13 +58,13 @@ function generateEmbed(client) {
 			"inline": true
 		  },
 		  {
-			"name": "Bot Uptime:",
-			"value": moment().subtract(process.uptime(), 'seconds').calendar(),
+			"name": "Bot Live Since:",
+			"value": moment().subtract(process.uptime(), 'seconds').fromNow(),
 			"inline": true
 		  },
 		  {
-			"name": "Server Uptime:",
-			"value": moment().subtract(os.uptime(), 'seconds').calendar(),
+			"name": "Server Live Since:",
+			"value": moment().subtract(os.uptime(), 'seconds').fromNow(),
 			"inline": true
 		  },
 		]

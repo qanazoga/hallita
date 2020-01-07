@@ -14,8 +14,9 @@ const client = new CommandoClient({
 
 client.registry
 	.registerGroups([
+		['owner', 'Owner Only Commands'],
 		['basic', 'Basic Commands'],
-		['owner', 'Owner Only Commands']
+		['warframe', 'Warframe'],
 	])
 	.registerDefaultTypes()
 	.registerDefaultGroups()
