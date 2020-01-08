@@ -24,7 +24,7 @@ function generateEmbed(client) {
 		"color": 65484,
 		"footer": {
 		  "icon_url": client.users.get(client.options.owner).avatarURL,
-		  "text": "<3#3333 made this :^)"
+		  "text": "<3#3333 made this (◍•ᴗ•◍)"
 		},
 		"thumbnail": {
 		  "url": client.user.avatarURL

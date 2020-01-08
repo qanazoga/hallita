@@ -16,7 +16,6 @@ module.exports = {
 }
 
 async function inactiveBaroEmbedBuilder(client, baro) {
-	console.log(baro);
     let arrival = moment(baro.activation).fromNow();
     const embed = {
         "title": "**Baro isn't here**",
@@ -25,12 +24,12 @@ async function inactiveBaroEmbedBuilder(client, baro) {
         "timestamp": moment().format(),
         "footer": {
           "icon_url": client.users.get(client.options.owner).avatarURL,
-          "text": "<3#3333 made this"
+          "text": "<3#3333 made this (◍•ᴗ•◍)"
         },
         "thumbnail": {
-          "url": "attachment://baro.jpg"
+          "url": "attachment://no_baro.png"
         }
       };
     
-      return {files: [path.join(path.resolve(), 'src/rsc/baro.jpg')], embed: embed };
+      return {files: [path.join(path.resolve(), 'src/rsc/no_baro.png')], embed: embed };
 }
