@@ -7,12 +7,7 @@ const { baseEmbed } = require('../embed/baseEmbedBuilder')
 module.exports = {
 	async generateBaroEmbed(client) {
 		const pl = await fetch('https://api.warframestat.us/pc/voidTrader')
-    const baro = 
-    // Debug payload
-    /**
-    {"id": "string","activation": "2020-01-09T01:02:31Z","expiry": "2020-01-10T01:02:31Z","character": "string","location": "string","inventory":[{"item": "big gun","ducats": 200,"credits": 400},{"item": "big gun","ducats": 200,"credits": 400},{"item": "big gun","ducats": 200,"credits": 400},{"item": "big gun","ducats": 200,"credits": 400},{"item": "big gun","ducats": 200,"credits": 400},{"item": "big gun","ducats": 200,"credits": 400},{"item": "big gun","ducats": 200,"credits": 400},{"item": "big gun","ducats": 200,"credits": 400},{"item": "cool mod","ducats":150,"credits":5000}],"psId": "string","active": true,"startString": "string","endString":"string"}
-       */
-     await pl.json()
+    const baro = await pl.json()
     
 		if (baro.active) {
 			return await activeBaroEmbedBuilder(client, baro);
@@ -26,16 +21,26 @@ function activeBaroEmbedBuilder(client, baro) {
   const ducatsEmoji = client.guilds.get(client.options.testServer).emojis.find(emoji => emoji.name == 'ducats');
   const creditsEmoji = client.guilds.get(client.options.testServer).emojis.find(emoji => emoji.name == 'credits');
 
-  const baroBaseEmbed = baseEmbed(client)
-    .setTitle('**Baro is Here!**')
-    .setThumbnail('http://content.warframe.com/MobileExport/Lotus/Interface/Icons/Player/BaroKiteerAvatar.png')
-    .setDescription(`He leaves ${moment(baro.expiry).fromNow()}.`);
-
-  for (let treasure of baro.inventory) {
-    baroBaseEmbed.addField(`${treasure.ducats}${ducatsEmoji} ${treasure.credits}${creditsEmoji}`, treasure.item, true);
+  function baseBaroEmbed() { 
+    return baseEmbed(client)
+      .setTitle('**Baro is Here!**')
+      .setThumbnail('http://content.warframe.com/MobileExport/Lotus/Interface/Icons/Player/BaroKiteerAvatar.png')
+      .setDescription(`He leaves ${moment(baro.expiry).fromNow()}.`);
   }
 
-  return [baroBaseEmbed]
+  let embeds = [];
+  let currentEmbed = baseBaroEmbed();
+  while (baro.inventory.length > 0) {
+    
+    if (currentEmbed.fields.length == 25) {
+      embeds.push(currentEmbed);
+      currentEmbed = baseBaroEmbed();
+    }
+    const treasure = baro.inventory.shift();
+    currentEmbed.addField(`${treasure.ducats}${ducatsEmoji} ${treasure.credits}${creditsEmoji}`, treasure.item, true);
+  }
+  embeds.push(currentEmbed);
+  return embeds;
 }
 
 function inactiveBaroEmbedBuilder(client, baro) {
