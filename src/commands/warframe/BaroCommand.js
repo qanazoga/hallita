@@ -13,6 +13,9 @@ module.exports = class BaroCommand extends Command {
 	}
 
 	async run(msg) {
-		await msg.channel.send(await generateBaroEmbed(msg.client));
+		const embeds = await generateBaroEmbed(msg.client)
+		for (let embed of embeds) {
+			await msg.embed(embed);
+		}
 	}
 }

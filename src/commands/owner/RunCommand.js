@@ -14,7 +14,7 @@ module.exports = class InfoCommand extends Command {
 			
 			args: [
 				{
-					key: 'str',
+					key: 'script',
 					prompt: 'What do you wanna run?',
 					type: 'string',
 				}
@@ -23,7 +23,7 @@ module.exports = class InfoCommand extends Command {
 	}
 
 	async run(msg, args) {
-		const { stdout, stderr } = await exec(args.str);
+		const { stdout, stderr } = await exec(args.script);
 		console.log(args.str)
 		if (!stdout && !stderr) await msg.reply(`no reply`);
 		if (stdout) await msg.reply(`\`\`\`\n${stdout}\`\`\``);
