@@ -79,3 +79,4 @@ typings/
 .dynamodb/ 
 
 config.json
+mfw

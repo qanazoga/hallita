@@ -17,6 +17,7 @@ client.registry
 	.registerGroups([
 		['owner', 'Owner Only Commands'],
 		['basic', 'Basic Commands'],
+		['meme', 'Memes'],
 		['warframe', 'Warframe'],
 	])
 	.registerDefaultTypes()

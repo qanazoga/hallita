@@ -49,7 +49,7 @@ function inactiveBaroEmbedBuilder(client, baro) {
   embed
     .setTitle("**Baro isn't here**")
     .setDescription(`He will be back in ${arrival}.`)
-    .attachFile(path.join(path.resolve(), 'src/rsc/no_baro.png'))
+    .attachFile(path.join(path.resolve(), 'src/rsc/warframe/no_baro.png'))
     .setThumbnail("attachment://no_baro.png");
 
     return [embed];

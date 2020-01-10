@@ -1,10 +1,10 @@
-const Commando = require('discord.js-commando');
+const { Command } = require('discord.js-commando');
 const { baseEmbed } = require('../../util/embed/baseEmbedBuilder');
 const { RichEmbed } = require('discord.js');
 const moment = require('moment');
 const os = require('os');
 
-module.exports = class InfoCommand extends Commando.Command {
+module.exports = class InfoCommand extends Command {
 
 	constructor(client) {
 		super(client, {
