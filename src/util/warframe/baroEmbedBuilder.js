@@ -1,7 +1,6 @@
 const moment = require('moment');
 const path = require('path');
 const fetch = require('node-fetch');
-const { RichEmbed } = require('discord.js');
 const { baseEmbed } = require('../embed/baseEmbedBuilder')
 
 module.exports = {
@@ -10,9 +9,9 @@ module.exports = {
     const baro = await pl.json()
     
 		if (baro.active) {
-			return await activeBaroEmbedBuilder(client, baro);
+			return activeBaroEmbedBuilder(client, baro);
 		} else {
-			return await inactiveBaroEmbedBuilder(client, baro);
+			return inactiveBaroEmbedBuilder(client, baro);
 		}
 	}
 }
@@ -30,14 +29,15 @@ function activeBaroEmbedBuilder(client, baro) {
 
   let embeds = [];
   let currentEmbed = baseBaroEmbed();
-  while (baro.inventory.length > 0) {
+  while (baro.inventory.length > 0) { // Tennocon-proofing
     
     if (currentEmbed.fields.length == 25) {
       embeds.push(currentEmbed);
-      currentEmbed = baseBaroEmbed();
+      currentEmbed = baseEmbed(client);
+      currentEmbed.setThumbnail('http://content.warframe.com/MobileExport/Lotus/Interface/Icons/Player/BaroKiteerAvatar.png')
     }
     const treasure = baro.inventory.shift();
-    currentEmbed.addField(`${treasure.ducats}${ducatsEmoji} ${treasure.credits}${creditsEmoji}`, treasure.item, true);
+    currentEmbed.addField(`__**${treasure.item}**__`, `${treasure.ducats}${ducatsEmoji} ${treasure.credits}${creditsEmoji}`, true);
   }
   embeds.push(currentEmbed);
   return embeds;
