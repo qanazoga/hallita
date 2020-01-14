@@ -17,6 +17,7 @@
   },
   "homepage": "https://gitlab.com/qanazoga/hallita#readme",
   "dependencies": {
+    "convert-units": "^2.3.4",
     "discord.js": "^11.5.1",
     "discord.js-commando": "^0.10.0",
     "moment": "^2.24.0",

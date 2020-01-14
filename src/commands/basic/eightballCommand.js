@@ -10,10 +10,7 @@ module.exports = class ChooseCommand extends Command {
 			aliases: ['8ball', 'eight-ball', 'magicconch', 'magic-conch'],
 			group: 'basic',
 			memberName: 'eightball',
-            description: 
-                stripIndent`
-                Behold, the oldest of Oracles, the Magic Eight Ball!
-                Ask any question and recieve an answer from beyond!`,
+            description: 'Ask any question and recieve an answer from beyond!',
 		});
 	}
 

@@ -15,8 +15,8 @@ module.exports = class ChooseCommand extends Command {
                 Feeling indecisive? Let me pick for you!
                 If a choice is more than one word, wrap it in quotes.`,
             examples: [
-                'choose "go to bed" "stay up for one more game"',
-                'choose League DotA "something good"'],
+                'choose "go to bed" "stay up for one more game"\n`>\tgo to bed`',
+                'choose League DotA "something good"\n`>\tsomething good`'],
 
             args: [
 				{
