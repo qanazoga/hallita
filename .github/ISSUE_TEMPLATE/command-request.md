@@ -2,14 +2,14 @@
 name: Command Request
 about: Have an idea for a command? Use this template!
 title: "[New Command] YourCommandName"
-labels: enhancement
+labels: command request
 assignees: qanazoga
 
 ---
 
 **Format:**  
 My command is formatted like this:  
-`yourCommandName <required args in pointy brackets> [optional args in square brackets/"named args in square brackets AND quotes"]`
+`yourCommandName <required args in pointy brackets> [optional args in square brackets/"named args in either bracket AND quotes"]`
 
 **Details:**  
 This is what my command does:
