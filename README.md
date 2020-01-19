@@ -5,6 +5,7 @@
 This is a bot I've been wanting to make for a long time.  
 It's a bit advanced, and will take some time to finish.
 
+I want it to have all the things my [old bot](https://github.com/qanazoga/soturi) had, plus a bunch of new features.
 
 ### New things:
 - Using Discord's OAuth system, guild owners should be able to configure Hallita's settings for their guild. This idea/module will be known as The Hub going forward.
