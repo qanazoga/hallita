@@ -11,21 +11,28 @@ module.exports = class MfwCommand extends Command {
 			aliases: ['tfw', 'mrw'],
 			group: 'meme',
 			memberName: 'mfw',
-			description: 'Returns a random reaction image.'
+			description: 'Returns a random reaction image.',
 		});
 	}
 
 	async run(msg) {
-        const filepath = path.join(path.resolve(), 'src/rsc/mfw');
-        const content = fs.readdirSync(filepath);
-        const mfw = randChoice(content)
+		try {
+			const filepath = path.join(path.resolve(), 'src/rsc/mfw');
+			const content = fs.readdirSync(filepath);
+			const mfw = randChoice(content);
 
-        await msg.say(
-            { files: [
-                {
-                    attachment: path.join(filepath,mfw),
-                    name: mfw,
-                }
-            ]})
+			await msg.say(
+				{
+					files: [
+						{
+							attachment: path.join(filepath, mfw),
+							name: mfw,
+						},
+					],
+				});
+		}
+		catch {
+			throw new Error('I can\'t find my memes ;~;');
+		}
 	}
-}
+};

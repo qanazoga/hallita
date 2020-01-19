@@ -1,11 +1,11 @@
-const { Command } = require('discord.js-commando')
+const { Command } = require('discord.js-commando');
 
 module.exports = class RestartCommand extends Command {
 
 	constructor(client) {
 		super(client, {
 			name: 'restart',
-			aliases: ['power','off'],
+			aliases: ['power', 'off'],
 			group: 'owner',
 			memberName: 'restart',
 			description: 'Restarts the bot',
@@ -14,7 +14,7 @@ module.exports = class RestartCommand extends Command {
 	}
 
 	async run(msg) {
-		await msg.channel.send("👋");
+		await msg.channel.send('👋');
 		process.exit();
 	}
-}
+};

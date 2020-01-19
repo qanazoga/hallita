@@ -1,5 +1,5 @@
 const { CommandoClient } = require('discord.js-commando');
-const  { token, commandPrefix, owner, oauthURL, supportInvite, supportServer, testServer, repo, } = require('./config/config.json');
+const { token, commandPrefix, owner, oauthURL, supportInvite, supportServer, testServer, repo } = require('./config/config.json');
 const fs = require('fs');
 const path = require('path');
 
@@ -33,12 +33,12 @@ client.once('ready', () => {
 fs.readdir(path.join(__dirname, 'events'), (err, files) => {
 	if (err) return console.error(err);
 	files.forEach(file => {
-		if (!file.endsWith(".js")) return;
+		if (!file.endsWith('.js')) return;
 		const event = require(`./events/${file}`);
-		let eventName = file.split(".")[0];
+		const eventName = file.split('.')[0];
 		client.on(eventName, event.bind(null, client));
 		delete require.cache[require.resolve(`./events/${file}`)];
 	});
 });
-  
+
 client.login(token);

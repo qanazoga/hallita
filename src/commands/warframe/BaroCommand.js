@@ -1,5 +1,5 @@
-const { Command } = require('discord.js-commando')
-const { generateBaroEmbed } = require('../../util/warframe/baroEmbedBuilder')
+const { Command } = require('discord.js-commando');
+const { generateBaroEmbed } = require('../../util/warframe/baroEmbedBuilder');
 
 module.exports = class BaroCommand extends Command {
 
@@ -13,9 +13,9 @@ module.exports = class BaroCommand extends Command {
 	}
 
 	async run(msg) {
-		const embeds = await generateBaroEmbed(msg.client)
-		for (let embed of embeds) {
+		const embeds = await generateBaroEmbed(msg.client);
+		for (const embed of embeds) {
 			await msg.embed(embed);
 		}
 	}
-}
+};
