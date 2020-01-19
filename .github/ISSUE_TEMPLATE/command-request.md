@@ -1,8 +1,8 @@
 ---
 name: Command Request
 about: Have an idea for a command? Use this template!
-title: "[New Command] YourCommandName"
-labels: command request
+title: "[New Command] YOUR_COMMAND_NAME"
+labels: new command
 assignees: qanazoga
 
 ---
