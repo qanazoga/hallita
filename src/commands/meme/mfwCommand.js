@@ -1,7 +1,7 @@
 const { Command } = require('discord.js-commando');
 const fs = require('fs');
 const path = require('path');
-const { randChoice } = require('../../util/smoothbrain');
+const { randChoice } = require('big-brain.js');
 
 module.exports = class MfwCommand extends Command {
 

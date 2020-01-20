@@ -1,5 +1,5 @@
 const { Command } = require('discord.js-commando');
-const { randChoice } = require('../../util/smoothbrain');
+const { randChoice } = require('big-brain.js');
 const { stripIndent } = require('common-tags');
 
 module.exports = class ChooseCommand extends Command {
