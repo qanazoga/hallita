@@ -1,9 +1,7 @@
-# Hallita
-
----
-
 This is a bot I've been wanting to make for a long time.  
 It's a bit advanced, and will take some time to finish.
+
+![header](https://repository-images.githubusercontent.com/234845733/11eb6d80-3afd-11ea-8141-2e4700dd65da)
 
 I want it to have all the things my [old bot](https://github.com/qanazoga/soturi) had, plus a bunch of new features.
 
