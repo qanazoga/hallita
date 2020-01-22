@@ -5,9 +5,10 @@ module.exports = class BaroCommand extends Command {
 
 	constructor(client) {
 		super(client, {
-			name: 'baro',
+			name: 'void-trader',
+			memberName: 'void-trader',
+			aliases: ['voidtrader', 'baro'],
 			group: 'warframe',
-			memberName: 'baro',
 			description: 'Gets current stats on Baro Ki\'Teer, the void trader.',
 		});
 	}
