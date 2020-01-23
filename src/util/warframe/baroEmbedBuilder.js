@@ -18,8 +18,8 @@ module.exports = {
 };
 
 function activeBaroEmbedBuilder(client, baro) {
-	const ducatsEmoji = client.guilds.get(client.options.testServer).emojis.find(emoji => emoji.name == 'ducats');
-	const creditsEmoji = client.guilds.get(client.options.testServer).emojis.find(emoji => emoji.name == 'credits');
+	const ducatsEmoji = client.guilds.get(client.options.supportServer).emojis.find(emoji => emoji.name == 'ducats');
+	const creditsEmoji = client.guilds.get(client.options.supportServer).emojis.find(emoji => emoji.name == 'credits');
 
 	function baseBaroEmbed() {
 		return baseEmbed(client)

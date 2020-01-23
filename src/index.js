@@ -1,5 +1,5 @@
 const { CommandoClient } = require('discord.js-commando');
-const { token, commandPrefix, owner, oauthURL, supportInvite, supportServer, testServer, repo } = require('./config/config.json');
+const { token, commandPrefix, owner, oauthURL, supportInvite, supportServer, repo } = require('./config/config.json');
 const fs = require('fs');
 const path = require('path');
 
@@ -9,7 +9,6 @@ const client = new CommandoClient({
 	oauthURL: oauthURL,
 	supportInvite: supportInvite,
 	supportServer: supportServer,
-	testServer: testServer,
 	repo: repo,
 });
 

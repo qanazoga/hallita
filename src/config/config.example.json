@@ -4,7 +4,6 @@
 	"owner": "your id",
 	"supportInvite": "https://discordapp.com/invite/AAAAAAA",
 	"supportServer": "id for the server above",
-	"testServer": "id for wherever you're testing your bot, I keep emojis my bot uses in mine",
 	"oauthURL": "https://discordapp.com/api/oauth2/authorize?client_id=yourBotID&permissions=8&scope=bot",
-	"repo": "https://gitlab.com/you/botName"
+	"repo": "https://github.com/you/botName"
 }

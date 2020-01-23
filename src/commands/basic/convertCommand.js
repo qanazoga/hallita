@@ -42,7 +42,7 @@ module.exports = class ChooseCommand extends Command {
 			name: 'convert',
 			group: 'basic',
 			memberName: 'convert',
-			description: 'Converts between units. See here for all units: <https://gitlab.com/qanazoga/hallita/-/wikis/commands/basic/convert>',
+			description: 'Converts between units. See here for all units: <https://github.com/qanazoga/hallita/wiki//convert>',
 			examples: [
 				'convert 500 mi km \n`>\t804.67`',
 				'convert 525600 min to year \n`>\t1`',
