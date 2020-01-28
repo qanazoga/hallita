@@ -1,10 +1,8 @@
 const { Command } = require('discord.js-commando');
-const fs = require('fs');
 const path = require('path');
-const fetch = require('node-fetch');
+const { downloadFile } = require('../../util/EZDownload');
 
 module.exports = class AddMfwCommand extends Command {
-
 	constructor(client) {
 		super(client, {
 			ownerOnly: true,
@@ -23,13 +21,7 @@ module.exports = class AddMfwCommand extends Command {
 		}
 
 		const filepath = path.join(path.resolve(), 'src/rsc/mfw');
-
-		fetch(msg.attachments.first().url)
-			.then(res => {
-				const dest = fs.createWriteStream(path.join(filepath, msg.attachments.first().filename));
-				res.body.pipe(dest);
-			});
-
+		await downloadFile(msg.attachments.first().url, filepath, msg.attachments.first().filename);
 		await msg.react('👍');
 	}
 };

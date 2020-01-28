@@ -18,6 +18,7 @@
   "homepage": "https://github.com/qanazoga/hallita#readme",
   "dependencies": {
     "big-brain.js": "^1.0.1",
+    "canvas": "^2.6.1",
     "convert-units": "^2.3.4",
     "discord.js": "^11.5.1",
     "discord.js-commando": "^0.10.0",
