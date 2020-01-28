@@ -42,11 +42,7 @@ module.exports = class JayPegCommand extends Command {
 			return;
 		}
 
-		console.log(args.quality);
-		console.log(101 - args.quality);
-		console.log((101 - args.quality) / 1000);
 		const quality = (101 - args.quality) / 1000;
-		console.log(quality);
 		await jaypegify(url, quality);
 		await msg.say('', {
 			files:
