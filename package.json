@@ -13,9 +13,9 @@
   "author": "qanazoga",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/qanazoga/hallita/issues"
+    "url": "https://gitlab.com/qanazoga/hallita/issues"
   },
-  "homepage": "https://github.com/qanazoga/hallita#readme",
+  "homepage": "https://qanazoga.com/hallita",
   "dependencies": {
     "big-brain.js": "^1.0.1",
     "canvas": "^2.6.1",

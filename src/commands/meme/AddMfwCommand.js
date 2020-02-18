@@ -7,21 +7,32 @@ module.exports = class AddMfwCommand extends Command {
 		super(client, {
 			ownerOnly: true,
 			name: 'add-mfw',
-			aliases: ['addmfw'],
+			aliases: ['addmfws'],
 			group: 'meme',
 			memberName: 'add-mfw',
 			description: 'Adds an image to the mfw reaction library',
+
+			args: [
+				{
+					key: 'url',
+					prompt: 'what\'s the image URL?',
+					type: 'string',
+					default: '',
+				},
+			],
 		});
 	}
 
-	async run(msg) {
-		if (msg.attachments.size == 0) {
-			await msg.say('Send me something to add!');
-			return;
-		}
-
+	async run(msg, args) {
+		/**
+		 * @param {Command.msg} msg
+		 */
 		const filepath = path.join(path.resolve(), 'src/rsc/mfw');
-		await downloadFile(msg.attachments.first().url, filepath, msg.attachments.first().filename);
+
+		const url = (msg.attachments.size > 0) ? msg.attachments.first().url : args.url;
+		const filename = (msg.attachments.size > 0) ? msg.attachments.first().filename : url.slice(url.lastIndexOf('/') + 1);
+
+		await downloadFile(url, filepath, filename);
 		await msg.react('👍');
 	}
 };
