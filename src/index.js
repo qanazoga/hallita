@@ -10,6 +10,7 @@ const client = new CommandoClient({
 	supportInvite: supportInvite,
 	supportServer: supportServer,
 	repo: repo,
+	unknownCommandResponse: false,
 });
 
 client.registry
